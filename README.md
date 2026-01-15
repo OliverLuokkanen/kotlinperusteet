@@ -9,4 +9,7 @@ Jetpack Compose -sovellus, jossa näytetään tehtävälista (mock-data) ja käs
 
 ## APK (debug)
 Android Studio: **Build → Build APK(s)**  
-Tiedosto: `app/build/outputs/apk/debug/app-debug.apk`
+Tiedosto: `app/build/outputs/apk/debug/app-debug.apk
+
+LINKKI YOUTUBE VIDEOON:
+https://youtube.com/shorts/W0LwubjC8eo
