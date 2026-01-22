@@ -16,7 +16,7 @@ class TaskViewModel : ViewModel() {
     }
 
     fun removeTask(id: Int) {
-        tasks.value = removeTask(tasks. value, id)
+        tasks.value = removeTask(tasks.value, id)
     }
 
     fun filterByDone(done: Boolean) {
@@ -24,7 +24,7 @@ class TaskViewModel : ViewModel() {
     }
 
     fun sortByDueDate() {
-        tasks.value = sortByDueDate(tasks. value)
+        tasks.value = sortByDueDate(tasks.value)
     }
 
     fun resetTasks() {

@@ -5,17 +5,17 @@ data class Task(
     val title: String,
     val description: String,
     val priority: Int,
-    val dueDate: String, // "YYYY-MM-DD"
+    val dueDate: String,
     val done: Boolean
 )
 
 val mockTasks: List<Task> = listOf(
-    Task(1, "Osta maitoa", "Käy kaupassa", 3, "2026-01-16", false),
-    Task(2, "Palauta kirja", "Kirjastoon ennen eräpäivää", 4, "2026-01-18", true),
-    Task(3, "Treeni", "Jalkatreeni salilla", 2, "2026-01-17", false),
-    Task(4, "Koodaa", "Toteuta Kotlin-funktiot", 5, "2026-01-15", false),
-    Task(5, "Soita mummolle", "Kuulumiset", 1, "2026-01-19", true),
-    Task(6, "Siivoa", "Keittiö ja olohuone", 2, "2026-01-20", false),
-    Task(7, "Maksa lasku", "Sähkölasku", 5, "2026-01-16", true),
-    Task(8, "Varaa aika", "Hammaslääkäri", 4, "2026-01-22", false)
+    Task(id = 1, title = "Osta maitoa", description = "Käy kaupassa", priority = 3, dueDate = "2026-01-16", done = false),
+    Task(id = 2, title = "Palauta kirja", description = "Kirjastoon ennen eräpäivää", priority = 4, dueDate = "2026-01-18", done = true),
+    Task(id = 3, title = "Treeni", description = "Jalkatreeni salilla", priority = 2, dueDate = "2026-01-17", done = false),
+    Task(id = 4, title = "Koodaa", description = "Toteuta Kotlin-funktiot", priority = 5, dueDate = "2026-01-15", done = false),
+    Task(id = 5, title = "Soita mummolle", description = "Kuulumiset", priority = 1, dueDate = "2026-01-19", done = true),
+    Task(id = 6, title = "Siivoa", description = "Keittiö ja olohuone", priority = 2, dueDate = "2026-01-20", done = false),
+    Task(id = 7, title = "Maksa lasku", description = "Sähkölasku", priority = 5, dueDate = "2026-01-16", done = true),
+    Task(id = 8, title = "Varaa aika", description = "Hammaslääkäri", priority = 4, dueDate = "2026-01-22", done = false)
 )

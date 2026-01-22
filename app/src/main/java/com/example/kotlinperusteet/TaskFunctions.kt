@@ -6,15 +6,15 @@ fun addTask(list: List<Task>, task: Task): List<Task> {
 
 fun toggleDone(list: List<Task>, id: Int): List<Task> {
     return list.map { t ->
-        if (t.id == id) t.copy(done = !t. done) else t
+        if (t.id == id) t.copy(done = !t.done) else t
     }
 }
 
-fun removeTask(list:  List<Task>, id: Int): List<Task> {
+fun removeTask(list: List<Task>, id: Int): List<Task> {
     return list.filter { it.id != id }
 }
 
-fun filterByDone(list:  List<Task>, done: Boolean): List<Task> {
+fun filterByDone(list: List<Task>, done: Boolean): List<Task> {
     return list.filter { it.done == done }
 }
 
