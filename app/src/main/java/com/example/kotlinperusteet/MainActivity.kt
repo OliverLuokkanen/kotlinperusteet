@@ -2,15 +2,21 @@ package com.example.kotlinperusteet
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import com.example.kotlinperusteet.ui.theme.KotlinPerusteetTheme
+import androidx.activity.compose. setContent
+import androidx.activity. viewModels
+import androidx.compose.material3.Surface
+import com.example.kotlinperusteet. ui.theme.KotlinPerusteetTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity :  ComponentActivity() {
+    private val viewModel: TaskViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             KotlinPerusteetTheme {
-                HomeScreen() // poista tasks = mockTasks
+                Surface {
+                    HomeScreen(viewModel = viewModel)
+                }
             }
         }
     }
