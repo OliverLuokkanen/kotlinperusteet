@@ -15,3 +15,5 @@ ViewModel:
 - helpottaa logiikan testaamista ja ylläpitoa
 
 Tässä työssä `HomeScreen` hakee ViewModelin `viewModel()`-funktiolla, ja UI päivittyy automaattisesti, kun ViewModelin `tasks`-tila muuttuu.
+
+Linkki viikon 2 youtube videoon https://youtube.com/shorts/MfWBqg5HV70?si=tjSwoT0Fqs4_Dx9X
