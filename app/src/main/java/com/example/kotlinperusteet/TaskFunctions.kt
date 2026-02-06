@@ -1,5 +1,7 @@
 package com.example.kotlinperusteet
 
+import com.example.kotlinperusteet.model.Task
+
 fun addTask(list: List<Task>, task: Task): List<Task> {
     return list + task
 }
