@@ -1,19 +1,30 @@
+# Week 4 – Navigointi Jetpack Composessa
 
-# Week2 – Kotlinperusteet
+## Navigointi
+Jetpack Compose -navigointi toteutetaan yhdellä aktiviteetilla (Single-Activity).
+- **NavController** hallitsee navigointia
+- **NavHost** sisältää reitit (composable-reitit)
 
-## Compose-tilanhallinta (state)
-Jetpack Composessa UI piirtyy tilan (state) perusteella. Kun tila muuttuu, Compose tekee automaattisesti uuden piirtokierroksen (recomposition) ja näkymä päivittyy.
+Sovelluksessa on kolme pääruutua:
+- **Home** (tehtävälista)
+- **Calendar** (tehtävät ryhmiteltynä päivämäärän mukaan)
+- **Settings** (dummy)
 
-Tässä työssä tehtävälista on `mutableStateOf(List<Task>)` -tilassa ViewModelissä. Kun listaa muutetaan (esim. `toggleDone`, `removeTask` tai `addTask`), `tasks.value` saa uuden listan ja UI päivittyy automaattisesti.
+Navigointi toteutetaan BottomNavigationilla.
 
-## Miksi ViewModel on parempi kuin pelkkä remember?
-`remember` säilyttää tilan vain niin kauan kuin Composable pysyy muistissa. Kun Activity luodaan uudelleen (esim. näytön kääntö), `remember`-tila voi hävitä.
+## MVVM + Navigointi
+Sama **TaskViewModel** ja sama tila jaetaan kaikille ruuduille.
+ViewModel luodaan NavHostin yläpuolella, joten tila säilyy navigoinnista huolimatta.
 
-ViewModel:
-- säilyy konfiguraatiomuutoksissa (kuten näytön käännössä)
-- pitää tilan erillään UI:sta (selkeämpi rakenne)
-- helpottaa logiikan testaamista ja ylläpitoa
+## CalendarScreen
+Kalenterinäkymä näyttää kuukauden ruudukossa:
+- viikonpäiväotsikot (Ma–Su)
+- edellisen/seuraavan kuukauden päivät harmaana
+- valitun päivän tehtävät listattuna
+- tehtävien määrä näkyy päivässä
 
-Tässä työssä `HomeScreen` hakee ViewModelin `viewModel()`-funktiolla, ja UI päivittyy automaattisesti, kun ViewModelin `tasks`-tila muuttuu.
-
-Linkki viikon 2 youtube videoon https://youtube.com/shorts/MfWBqg5HV70?si=tjSwoT0Fqs4_Dx9X
+## AlertDialog (add/edit)
+Uusi tehtävä lisätään ja tehtävää muokataan **AlertDialogilla**.
+- Add → `viewModel.addTask(...)`
+- Edit → `viewModel.updateTask(...)`
+- Delete → `viewModel.removeTask(...)`
