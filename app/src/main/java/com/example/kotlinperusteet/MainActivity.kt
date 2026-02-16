@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Cloud
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Settings
@@ -23,12 +24,15 @@ import androidx.navigation.compose.rememberNavController
 import com.example.kotlinperusteet.navigation.ROUTE_CALENDAR
 import com.example.kotlinperusteet.navigation.ROUTE_HOME
 import com.example.kotlinperusteet.navigation.ROUTE_SETTINGS
+import com.example.kotlinperusteet.navigation.ROUTE_WEATHER
 import com.example.kotlinperusteet.ui.theme.KotlinPerusteetTheme
 import com.example.kotlinperusteet.view.CalendarScreen
 import com.example.kotlinperusteet.view.HomeScreen
 import com.example.kotlinperusteet.view.SettingsScreen
+import com.example.kotlinperusteet.view.WeatherScreen
 import com.example.kotlinperusteet.viewmodel.TaskViewModel
-import androidx.compose.material3.NavigationBar
+import com.example.kotlinperusteet.viewmodel.WeatherViewModel
+import androidx.compose.material.icons.automirrored.filled.List
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +42,12 @@ class MainActivity : ComponentActivity() {
                 Surface {
                     val navController = rememberNavController()
                     val vm: TaskViewModel = viewModel()
+                    val weatherVm: WeatherViewModel = viewModel()
 
                     val items = listOf(
-                        BottomNavItem("Tehtävät", ROUTE_HOME, Icons.Default.List),
+                        BottomNavItem("Tehtävät", ROUTE_HOME, Icons.AutoMirrored.Filled.List),
                         BottomNavItem("Kalenteri", ROUTE_CALENDAR, Icons.Default.DateRange),
+                        BottomNavItem("Sää", ROUTE_WEATHER, Icons.Default.Cloud),
                         BottomNavItem("Asetukset", ROUTE_SETTINGS, Icons.Default.Settings)
                     )
 
@@ -76,6 +82,9 @@ class MainActivity : ComponentActivity() {
                             }
                             composable(ROUTE_CALENDAR) {
                                 CalendarScreen(vm = vm, paddingValues = padding)
+                            }
+                            composable(ROUTE_WEATHER) {
+                                WeatherScreen(vm = weatherVm, paddingValues = padding)
                             }
                             composable(ROUTE_SETTINGS) {
                                 SettingsScreen(paddingValues = padding)

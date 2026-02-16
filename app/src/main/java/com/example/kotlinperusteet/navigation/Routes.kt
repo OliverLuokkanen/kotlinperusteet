@@ -3,3 +3,5 @@ package com.example.kotlinperusteet.navigation
 const val ROUTE_HOME = "home"
 const val ROUTE_CALENDAR = "calendar"
 const val ROUTE_SETTINGS = "settings"
+
+const val ROUTE_WEATHER = "weather"
