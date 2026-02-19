@@ -1,30 +1,16 @@
-# Week 4 – Navigointi Jetpack Composessa
+# Viikko 5 – Sääsovellus (Retrofit + OpenWeather)
 
-## Navigointi
-Jetpack Compose -navigointi toteutetaan yhdellä aktiviteetilla (Single-Activity).
-- **NavController** hallitsee navigointia
-- **NavHost** sisältää reitit (composable-reitit)
+## Retrofit & HTTP
+Retrofit hoitaa HTTP‑pyynnöt ja kutsuu OpenWeather‑rajapintaa.
 
-Sovelluksessa on kolme pääruutua:
-- **Home** (tehtävälista)
-- **Calendar** (tehtävät ryhmiteltynä päivämäärän mukaan)
-- **Settings** (dummy)
+## JSON → dataluokat
+Gson muuntaa JSON‑vastauksen Kotlin‑dataluokiksi.
 
-Navigointi toteutetaan BottomNavigationilla.
+## Coroutines
+API‑kutsu tehdään taustasäikeessä, UI päivittyy kun data tulee.
 
-## MVVM + Navigointi
-Sama **TaskViewModel** ja sama tila jaetaan kaikille ruuduille.
-ViewModel luodaan NavHostin yläpuolella, joten tila säilyy navigoinnista huolimatta.
+## UI‑tila
+ViewModel ylläpitää `WeatherUiState`‑tilaa, Compose reagoi muutoksiin.
 
-## CalendarScreen
-Kalenterinäkymä näyttää kuukauden ruudukossa:
-- viikonpäiväotsikot (Ma–Su)
-- edellisen/seuraavan kuukauden päivät harmaana
-- valitun päivän tehtävät listattuna
-- tehtävien määrä näkyy päivässä
-
-## AlertDialog (add/edit)
-Uusi tehtävä lisätään ja tehtävää muokataan **AlertDialogilla**.
-- Add → `viewModel.addTask(...)`
-- Edit → `viewModel.updateTask(...)`
-- Delete → `viewModel.removeTask(...)`
+## API‑avain
+`local.properties → BuildConfig → Retrofit`
