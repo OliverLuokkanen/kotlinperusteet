@@ -14,3 +14,5 @@ ViewModel ylläpitää `WeatherUiState`‑tilaa, Compose reagoi muutoksiin.
 
 ## API‑avain
 `local.properties → BuildConfig → Retrofit`
+yt video:
+https://youtu.be/-chBj0LAowc
